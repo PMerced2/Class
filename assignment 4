@@ -1,26 +1,38 @@
 // Written by Precious Merced
-//Date 9/25/2016
+//Date 9/26/2016
+//redo
 //***************
-
+#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #define PAUSE system("pause");
 
 main () {
-int weight;
-		float miles, cost, MilesCharge, OverWeight;
-		printf("How many pounds is the package?: \n");
-		scanf("%i", &weight);
-		printf("This package will ship how many miles?: \n");
-		scanf("%f", &miles);
-		MilesCharge = miles / 500 * 10;
-		OverWeight = weight % 15;
-		
-		if (weight <= 15)
-			cost = 15;
-		else
-			cost = (OverWeight *0.5) + MilesCharge + 15;
+int miles = 0;
+	float weight = 0.0;
+	float milesCost = 0.0;
+	float weightCost = 0.0;
+	float totalCost = 0.0;
 
-		printf("Your total cost for this package is: %.2f dollars \n", cost);
+	printf("Input weight of package: \n");
+	scanf("%f", &weight);
+	printf("Input the miles to ship package: \n");
+	scanf("%i", &miles);
+
+	if (weight <= 15)
+		weightCost = 15;
+	else
+		weightCost = 15 + (weight - 15)*.5;
+	
+	milesCost = miles / 500 * 10;
+	if (miles % 500 != 0)
+		milesCost = milesCost + 10;
+	
+	totalCost = weightCost + milesCost;
+
+	printf("Cost based on Weight: %.2f\n", weightCost);
+	printf("Cost based on Miles: %.2f\n", milesCost);
+	printf("Total cost to ship..:%.2f\n", totalCost);
+
 
 
 
