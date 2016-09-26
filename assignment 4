@@ -6,7 +6,21 @@
 #define PAUSE system("pause");
 
 main () {
+int weight;
+		float miles, cost, MilesCharge, OverWeight;
+		printf("How many pounds is the package?: \n");
+		scanf("%i", &weight);
+		printf("This package will ship how many miles?: \n");
+		scanf("%f", &miles);
+		MilesCharge = miles / 500 * 10;
+		OverWeight = weight % 15;
+		
+		if (weight <= 15)
+			cost = 15;
+		else
+			cost = (OverWeight *0.5) + MilesCharge + 15;
 
+		printf("Your total cost for this package is: %.2f dollars \n", cost);
 
 
 
