@@ -1,0 +1,17 @@
+// Written by Precious Merced
+//Date 9/25/2016
+//***************
+
+#include<stdio.h>
+#define PAUSE system("pause");
+
+main () {
+
+
+
+
+
+
+
+PAUSE;
+}// end of main
