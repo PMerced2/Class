@@ -1,0 +1,60 @@
+/*written by Precious Merced
+for grocery assignment
+date: 10/2/2016 
+********************/
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#define PAUSE system("pause");
+
+main() {
+	float weekOne, weekTwo, weekThree, avgGrocery = 0.0;
+	
+	
+
+	printf("Please give week 1s grocery price: \n");
+	scanf("%f", &weekOne);
+	printf("Please give week 2s grocery price: \n");
+	scanf("%f", &weekTwo);
+	printf("Please give week 3s grocery price: \n");
+	scanf("%f", &weekThree);
+
+	avgGrocery = (weekOne + weekTwo + weekThree) / 3;
+
+	if (weekOne < 50) {
+		printf("you must be starving $%.2f\n", weekOne);
+	}
+	else if (weekOne >= 50 && weekOne < 200) {
+		printf("you are eating well $%.2f \n", weekOne);
+	}
+	else   {
+		printf("you are going to get fat $%.2f \n", weekOne);
+		}
+	if (weekTwo < 50) {
+		printf("you must be starving $%.2f\n", weekTwo);
+	}
+	else if (weekTwo >= 50 && weekTwo < 200) {
+		printf("you are eating well $%.2f \n", weekTwo);
+	}
+	else   {
+		printf("you are going to get fat$ %.2f \n", weekTwo);
+	}
+	if (weekThree < 50) {
+		printf("you must be starving $%.2f\n", weekThree);
+	}
+	else if (weekThree >= 50 && weekThree < 200) {
+		printf("you are eating well $%.2f \n", weekThree);
+	}
+	else   {
+		printf("you are going to get fat $%.2f \n", weekThree);
+	}
+	
+	if (weekTwo > weekOne) {
+		printf("Are you eating more? \n");
+	}
+		if( weekThree < weekOne && weekThree < weekTwo){
+			printf("Are you on a diet? \n");
+		}
+		printf("your average grocery price is...:$%.2f\n", avgGrocery);
+
+	PAUSE;
+}
