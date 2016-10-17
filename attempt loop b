@@ -1,7 +1,10 @@
 /****
 written by Precious
 ********/
-
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#define PAUSE system("pause")
+#define CLR system("clr")
 main () {
 int num1;
 int i, j;
@@ -17,6 +20,7 @@ do {
 		for (i = 0; i < num1; i++) {
 			for (j = 0; j <= i; j++)
 				printf("* ");
+				
 			} // end outer loop
 		PAUSE;
 
