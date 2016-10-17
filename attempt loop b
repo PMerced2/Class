@@ -1,0 +1,23 @@
+/****
+written by Precious
+********/
+
+main () {
+int num1;
+int i, j;
+do {
+			printf("Enter # of rows for Triangle [ <=50 ]: ");
+			scanf("%i", &num1);
+			if (num1 > 50) {
+				printf("Must enter a number 50 or less....!\n");
+				PAUSE;
+			}// end if
+		}while (num1 > 50);
+		//IF I GET HERE ALL IS GOOD TO GO
+		for (i = 0; i < num1; i++) {
+			for (j = 0; j <= i; j++)
+				printf("* ");
+			} // end outer loop
+		PAUSE;
+
+}
