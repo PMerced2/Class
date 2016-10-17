@@ -7,16 +7,16 @@ written by Precious
 #define PAUSE system("pause")
 
 main() {
-	char name;
+	char name[20];
 	int i=0;
 	int times;
 	printf("Please enter how many times you want name printed: \n ");
 	scanf("%i", &times);
 	printf("Please enter name: \n");
-	scanf("%c", &name);
+	scanf("%s", name);
 	
 	while (i < times) {
-		printf("%i . %c", i, name);
+		printf("%i . %s", i, name);
 		PAUSE;
 		i++;
 		
