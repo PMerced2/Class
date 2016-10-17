@@ -1,0 +1,26 @@
+/****************
+written by Precious
+*************/
+
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#define PAUSE system("pause")
+
+main() {
+	char name;
+	int i=0;
+	int times;
+	printf("Please enter how many times you want name printed: \n ");
+	scanf("%i", &times);
+	printf("Please enter name: \n");
+	scanf("%c", &name);
+	
+	while (i < times) {
+		printf("%i . %c", i, name);
+		PAUSE;
+		i++;
+		
+	} 
+	// end while
+	PAUSE;
+} // end main
