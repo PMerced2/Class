@@ -1,0 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#define PAUSE system("pause")
+#include <time.h>
+main() {
+	int dailynumber = 0;
+	int thefavoriteNO = 0;
+	int money = -365;
+	int winCount = 0;
+	int const LB = 0;
+	int const UB = 999;
+	int i;
+srand((unsigned)time(NULL)); // seed the ran function
+printf("Enter favorite lottery number: \n");
+scanf("%i", &thefavoriteNO);
+	for (i = 0; i < 365; i++) {
+		dailynumber = LB + rand() % (UB - LB + 1);
+		if (thefavoriteNO == dailynumber) {
+			money += 500;
+			winCount++;
+		} // end if
+	} //end for
+
+	if (winCount == 0)
+		printf("Well you wasted a lot of money\n");
+	else {
+		printf("Wow you won %i times \n", winCount);
+	}
+	printf("You have $%i! \n", money);
+	PAUSE;
+} //bye
