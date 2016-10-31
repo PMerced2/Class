@@ -1,0 +1,49 @@
+#define _CRT_SECURE_NO_WARNINGS 
+#define CLS system("cls")
+#include <stdio.h>
+#include <ctype.h>
+#define PAUSE system("pause")
+#define flush flushIt()
+#define CLS system("cls")
+
+//prototype here
+char again();
+void flushIt();
+void headFlip(int head, int tail);
+void tailFlip(int head, int tail);
+int flipCoin();
+void displayStats(int head, int tail);
+main() {
+	int flip, head, tail = 0;
+	
+	do {
+ 	flip = flipCoin();
+	if (flip == 0) {
+		head = headFlip(head, tail);
+	}
+	else {
+		tail = tailFlip(tail, head);
+	} //end if else
+	} while (again() == 'Y');
+
+
+	PAUSE;
+}//end main
+char again() {
+	char result;
+		printf("Flip again? Y?");
+		scanf("%c", &result);
+		return toupper(result);
+}//end again
+
+void flushIt() {
+	while (getchar() != '\n');
+}// end flush
+int flipCoin() {
+	int lowerbound = 0;
+	int higherbound = 1;
+	int theNumber;
+	srand((unsigned)time(NULL));//seed rand function
+	theNumber = lowerbound + rand() % (higherbound - lowerbound + 1);
+	return theNumber;
+}// end flipCoin
