@@ -48,6 +48,7 @@ int flipCoin() {
 	return theNumber;
 }// end flipCoin
 	
+Color Code:  system("COLOR FC ")
 	printf("TTTTTTTTT    A     IIIIIIIII LL        SSSSSSSSSS       \n");
 	printf("   TT      A   A       T     LL        S                  \n");
 	printf("   TT     A     A      T     LL        S                   \n");
@@ -59,3 +60,4 @@ int flipCoin() {
 
 
 
+Color Code:  system("COLOR ")
