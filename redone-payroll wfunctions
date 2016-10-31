@@ -1,0 +1,118 @@
+#define _CRT_SECURE_NO_WARNINGS 
+#define CLS system("cls")
+#include <stdio.h>
+#include <ctype.h>
+#define PAUSE system("pause")
+#define flush Flush()
+#define CLS system("cls")
+#define FEDTAX .245
+#define MEDTAX .075
+// add prototypes here
+void displayMenu();
+char getSelection();
+void Worked(float hourlyPay, float hoursWorked);
+void Workedprint(float hourlyPay, float hoursWorked);
+void paidTaxes(float fedTax, float medTax, float grossPay);
+void getPAID(float hoursWorked, float hourlyPay, float regPay, float otPay, float grossPay, float netPay, float medTax, float fedTax);
+main() {
+	int userChoice;
+	float hourlyPay, regPay, netPay = 0.0;
+	float hoursWorked, otPay, grossPay = 0.0;
+	float fedTax, medTax = 0.0;
+	do {
+		userChoice = getSelection();
+		switch (userChoice) {
+		case 'A': //input hoursworked and RoP
+			printf("Enter hourly rate of pay: ");
+			scanf("%f", &hourlyPay);
+			flush;
+			printf("Enter hours worked......: ");
+			scanf("%f", &hoursWorked);
+			flush;
+			 Workedprint( hourlyPay, hoursWorked);
+			 PAUSE;
+
+	       getPAID(hoursWorked, hourlyPay, regPay, otPay, grossPay, netPay, medTax, fedTax);
+		   grossPay = regPay + otPay;
+		   netPay = grossPay - fedTax - medTax;
+			printf("Regular Pay.: $%.2f\n", regPay);
+			printf("Overtime Pay: $%.2f\n", otPay);
+			printf("Gross Pay...: $%.2f\n", grossPay);
+			printf("Net Pay.....: $%.2f\n", netPay);
+			PAUSE;
+			break;
+		case 'B':// taxes
+			paidTaxes(fedTax, medTax, grossPay);
+
+			break;
+		case 'Q': //quit
+			printf("thanks for checking your payroll.\n");
+			PAUSE;
+			break;
+		default:
+			printf("Hey A, B or Q only!");
+			PAUSE;
+			break;
+		}// end switch
+
+	} while (userChoice != 'Q');
+
+
+
+
+
+
+	PAUSE;
+}// end main
+
+ //alphabetical order
+void displayMenu() {
+	CLS;
+	printf("\n===========================\n");
+	printf("=========MAIN MENU============\n");
+	printf(" A. Input Rate of Pay and Hours Worked\n");
+    printf(" B. Taxes \n");
+	printf(" Q. Quit \n");
+	printf("================================\n");
+}// end displayMenu
+void getPAID(float hoursWorked, float hourlyPay, float regPay, float otPay, float grossPay, float netPay, float medTax, float fedTax) {
+	if (hoursWorked > 40) {
+		regPay = hourlyPay * 40;
+		otPay = (hoursWorked - 40) * 1.5 * hourlyPay;
+	}
+	else {
+		regPay = hourlyPay * hoursWorked;
+		otPay = 0.0;
+	}// end if else
+	grossPay = regPay + otPay;
+	netPay = grossPay - fedTax - medTax;
+}// end getPAID
+char getSelection() {
+	char result;
+	displayMenu();
+	scanf("%c", &result); flush;
+	result = toupper(result); // makes uppercase
+	return result; // always use the result bits for a value returning functions
+}// end getSelection
+void paidTaxes(float fedTax, float medTax, float grossPay) {
+	fedTax = grossPay * FEDTAX;
+	medTax = grossPay * MEDTAX;
+	printf("Federal Tax.: $%.2f\n", fedTax);
+	printf("Medical Tax.: $%.2f\n", medTax);
+	PAUSE;
+}// end paidTaxes
+void Worked(float hourlyPay, float hoursWorked) {
+	printf("Enter hourly rate of pay: ");
+	scanf("%f", &hourlyPay);
+	flush;
+	printf("Enter hours worked......: ");
+	scanf("%f", &hoursWorked);
+	flush;
+
+}//end Worked
+void Workedprint(float hourlyPay, float hoursWorked) {
+	
+	printf("Hourly Rate.: $%.2f\n", hourlyPay);
+	printf("Hours Worked:  %.2f\n", hoursWorked);
+	PAUSE;
+}// end Workedprint
