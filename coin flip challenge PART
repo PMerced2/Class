@@ -47,3 +47,15 @@ int flipCoin() {
 	theNumber = lowerbound + rand() % (higherbound - lowerbound + 1);
 	return theNumber;
 }// end flipCoin
+	
+	printf("TTTTTTTTT    A     IIIIIIIII LL        SSSSSSSSSS       \n");
+	printf("   TT      A   A       T     LL        S                  \n");
+	printf("   TT     A     A      T     LL        S                   \n");
+	printf("   TT    A       A     T     LL        S                     \n");
+	printf("   TT    AAAAAAAAA     T     LL        SSSSSSSSSS  \n");
+	printf("   TT    A       A     T     LL                 S   \n");
+	printf("   TT    A       A     T     LL                 S          \n");
+	printf("   TT    A       A IIIIIIIII LLLLLLLLL SSSSSSSSSS          \n");
+
+
+
