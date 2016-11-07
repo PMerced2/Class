@@ -1,0 +1,83 @@
+// written by Precious 
+
+
+#define _CRT_SECURE_NO_WARNINGS 
+#define CLS system("cls")
+#include <stdio.h>
+#include <ctype.h>
+#define PAUSE system("pause")
+#define flush Flush()
+#define CLS system("cls")
+//prototype here
+void Flush();
+void displayMenu();
+void getSelection();
+void getNumber();
+
+main() {
+int userChoice;
+int theNumber;
+char cont, another;
+int lowestNumber=0, highestNumber=0;
+int average=0, count=0;
+int total;
+do { 
+    userChoice = getSelection();
+    switch (userChoice) {
+    case 1 : // Enter a Number
+            getNumber();
+            
+            break;
+     case 2 : //Display Highest Number
+          Highest();
+            break;
+     case 3 : //Display Lowest Number
+          Lowest();
+            break;
+case 4 : // Average
+      averageOf();
+            break;
+case 5 : // Quit
+     printf("Goodbye! \n");
+     PAUSE;
+            break;
+
+}// end switch
+while (cont != 'Y');
+PAUSE;
+}// end main
+// alphabetical order
+
+void displayMenu() {
+	CLS;
+	printf("\n===========================\n");
+	printf("=========MAIN MENU============\n");
+	printf(" 1. Enter a number\n");
+	printf(" 2. Display Highest Number\n");
+	printf(" 3. Display Lowest Number \n");
+  printf(" 3. Average \n");
+	printf(" 5. Quit \n");
+	printf("================================\n");
+}// end displayMenu
+
+
+
+
+void Flush() {
+	while (getchar() != '\n');
+}// end flush
+void getNumber() {
+int theNumber;
+char another;
+do { printf("Please enter a number : \n");
+scanf("%i", &theNumber);
+printf("Another number? (Y/N): ");
+scanf("%c", another);
+} while (another != 'N');
+}// end getNumber
+void getSelection() {
+	int result;
+	displayMenu();
+	scanf("%i", &result); flush;
+	return result; // always use the result bits for a value returning functions
+}// end getSelection
