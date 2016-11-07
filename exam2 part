@@ -1,0 +1,41 @@
+/*
+Written by Precious and eventually JAMIL and TAMIYA
+//16
+
+*/
+
+#define _CRT_SECURE_NO_WARNINGS 
+#define CLS system("cls")
+#include <stdio.h>
+#include <ctype.h>
+#define PAUSE system("pause")
+#define flush Flush()
+#define CLS system("cls")
+
+main() {
+
+	int averageMPG = 0;
+	float gallonPrice, money, canAfford, milesCanDrive , moneyGas= 0.0;
+	const float gasTank = 20;
+	int fillCount = 0, i;
+	printf("How many miles per gallon does your car go? ");
+	scanf("%i", &averageMPG);
+	printf("How much money do you have on you? ");
+	scanf("%f", &money);
+	printf("What is the price of gas? ");
+	scanf("%f", &gallonPrice);
+	canAfford = averageMPG*(money/ gallonPrice);
+	printf("You can afford to drive %.2f miles \n", canAfford);
+	milesCanDrive = averageMPG*gasTank;
+	moneyGas = milesCanDrive + canAfford;
+	printf("You cand drive this much before running out of money and gas: %.2f miles \n", moneyGas);
+	
+	for (i = milesCanDrive; i == 0 ; i--) {
+		if (i == 0) {
+			i = canAfford;
+			fillCount++;
+		}
+	}
+	printf("%i\n\n", fillCount);
+		PAUSE;
+}// end main
