@@ -39,3 +39,42 @@ main() {
 	printf("%i\n\n", fillCount);
 		PAUSE;
 }// end main
+//****************************************************************
+//Begin of Prime Code:
+void getPrime();
+
+
+
+
+
+
+ main() {
+	 getPrime();
+	 PAUSE;
+
+}// end main
+ // alphabetical order
+ void getPrime() {
+	 int  i, j, prime;
+	 int hundred = 100;
+
+	 printf("Prime numbers between %d to %d\n", 1, 100);
+
+	 for (i = 2; i <= hundred; i++) {
+		 prime = 0;
+		 /* Check whether i is prime or not */
+		 for (j = 2; j <= i / 2; j++) {
+
+			 if (i % j == 0) {
+				 prime = 1;
+				 break;
+			 }
+		 }
+
+		 if (prime == 0 && hundred != 1)
+			 printf("%d ", i);
+	 }
+	 _getch();
+	 return 0;
+
+ }// end getPrime
