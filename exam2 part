@@ -78,3 +78,74 @@ void getPrime();
 	 return 0;
 
  }// end getPrime
+//*********************************************************************
+How Far Go FULLY DONE: 
+char getCalculateAnotherTrip();
+void displayOutput(int, int);
+int getMpg();
+float getPriceOfGas();
+float getUserMoney();
+void displayGraphic();
+main() {
+case 3:
+                do {
+                    displayGraphic();
+                    avgMilePerGallon = getMpg();
+                    priceOfGas = getPriceOfGas();
+                    userMoney = getUserMoney();
+                    
+                    initialMilesCanTavel = currentTank * avgMilePerGallon;
+                    additionalMilesCanTravel = (userMoney / priceOfGas) * avgMilePerGallon;
+                    
+                    totalMilesCanTravel = initialMilesCanTavel + additionalMilesCanTravel;
+                    fillCount = totalMilesCanTravel / initialMilesCanTavel;
+                    
+                    displayOutput(totalMilesCanTravel, fillCount);
+                    calculateAnotherTrip = getCalculateAnotherTrip();
+                } while (calculateAnotherTrip == 'Y' || calculateAnotherTrip == 'y');
+                CLS;
+                break;
+	}// end main
+	
+char getCalculateAnotherTrip() {
+    
+    char calculateAnotherTrip;
+    
+    printf("\tCalculate another trip? (Y or N)?: ");
+    scanf(" %c", &calculateAnotherTrip);
+    FLUSH;
+    return calculateAnotherTrip;
+}
+void displayOutput(int totalMilesCanTravel, int fillCount) {
+    
+    printf("\n\t You can drive %i miles before you're out of gas and money\n", totalMilesCanTravel);
+    printf("\t You would have to fill up %i time(s)\n\n\n", fillCount);
+}
+int getMpg() {
+    int avgMilesPerGallon;
+    
+    printf("What is the average miles per gallon for your vehicle?: ");
+    scanf("%i", &avgMilesPerGallon);
+    return avgMilesPerGallon;
+}
+float getPriceOfGas() {
+    float priceOfGas;
+    do {
+        printf("What is the price of a gallon of gas?: ");
+        scanf("%f", &priceOfGas);
+        FLUSH;
+    } while (priceOfGas == 0);
+    return priceOfGas;
+}
+float getUserMoney() {
+    float userMoney;
+    
+    printf("How much money do you have on you?: ");
+    scanf("%f", &userMoney);
+    return userMoney;
+}
+void displayGraphic() {
+    printf("\n\t\t\t\t------------------->\n");
+    printf("\t\t\t\tHOW FAR CAN YOU GO?\n");
+    printf("\t\t\t\t<-------------------\n\n");
+}
